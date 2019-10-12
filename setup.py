@@ -21,6 +21,7 @@ setup(
     packages=['django_templatetags_ext'],
     py_modules=[],
     install_requires=['monetary', 'screen', 'pysnippets'],
+    include_package_data=True,
 
     classifiers=[
         'Development Status :: 5 - Production/Stable',
