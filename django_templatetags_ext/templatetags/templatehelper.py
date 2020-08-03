@@ -46,12 +46,12 @@ def __googolformat(value, ndigits='auto', suffix=True):
 
 @register.filter(is_safe=True)
 def googolformat(value, ndigits='auto'):
-    __googolformat(value, ndigits=ndigits, suffix=True)
+    return __googolformat(value, ndigits=ndigits, suffix=True)
 
 
 @register.filter(is_safe=True)
 def googolformat2(value, ndigits='auto'):
-    __googolformat(value, ndigits=ndigits, suffix=False)
+    return __googolformat(value, ndigits=ndigits, suffix=False)
 
 
 ###################
