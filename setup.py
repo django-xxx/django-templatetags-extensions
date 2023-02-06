@@ -11,7 +11,8 @@ setup(
     version=version,
     keywords='Django Template Tags TemplateTags Ext Extensions',
     description='Django TemplateTags Extensions',
-    long_description=open('README.rst').read(),
+    long_description=open('README.md').read(),
+    long_description_content_type='text/markdown',
 
     url='https://github.com/django-xxx/django-templatetags-extensions',
 
@@ -20,7 +21,7 @@ setup(
 
     packages=['django_templatetags_ext'],
     py_modules=[],
-    install_requires=['monetary', 'screen', 'pysnippets'],
+    install_requires=['django-six', 'monetary', 'screen', 'pysnippets'],
     include_package_data=True,
 
     classifiers=[

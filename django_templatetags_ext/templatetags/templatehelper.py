@@ -5,7 +5,7 @@ from __future__ import division
 import monetary
 import screen
 from django import template
-from django.utils.encoding import force_text
+from django_six import force_str
 from pysnippets import strsnippets as ssn
 
 
@@ -97,7 +97,7 @@ def truncatechars2(value, arg):
         length = int(length)
     except ValueError:
         return value
-    value = force_text(value)
+    value = force_str(value)
     if len(value) <= length:
         return value
     return '%s%s' % (value[:length], truncate)
@@ -124,7 +124,7 @@ def truncatewidth(value, arg):
         length = int(length)
     except ValueError:
         return value
-    value = force_text(value)
+    value = force_str(value)
     if len(value) <= length:
         return value
     truncated = value[:screen.calc_text_pos(value, 0, len(value), length * 2)[0]]
@@ -144,5 +144,5 @@ def remove_line_break(value, repl=' '):
     """
     if not value:
         return ''
-    value = force_text(value)
+    value = force_str(value)
     return ssn.removeLineBreak(value, repl=repl)
